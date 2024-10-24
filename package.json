@@ -1,0 +1,59 @@
+{
+  "name": "gtfs-to-blocks-service",
+  "version": "1.2.3",
+  "private": true,
+  "author": "Brendan Nee <brendan@blinktag.com>",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.3.1",
+    "gtfs-to-blocks": "^0.3.1",
+    "next": "^15.0.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-dropzone": "^14.2.10",
+    "react-toastify": "^10.0.6",
+    "tempy": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^9",
+    "eslint-config-next": "^15.0.1",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "postcss": "^8",
+    "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/keep-a-changelog": {
+        "filename": "CHANGELOG.md"
+      }
+    },
+    "hooks": {
+      "after:bump": "npm run build"
+    }
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "lint-staged": {
+    "*.js": "prettier --write",
+    "*.jsx": "prettier --write",
+    "*.ts": "prettier --write",
+    "*.tsx": "prettier --write",
+    "*.json": "prettier --write"
+  }
+}

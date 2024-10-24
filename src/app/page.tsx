@@ -35,8 +35,8 @@ export default function Home() {
             <div>
               What is a block? A block is a group of trips that are part of the
               same transit service usually operated by a single vehicle. Two
-              trips which overlap in time can't be part of the same block as a
-              vehicle can only operate one trip at a time.
+              trips which overlap in time can&apos;t be part of the same block
+              as a vehicle can only operate one trip at a time.
             </div>
           </div>
 

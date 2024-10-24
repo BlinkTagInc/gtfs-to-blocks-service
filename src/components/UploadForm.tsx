@@ -24,6 +24,28 @@ const UploadForm = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  const downloadResponse = async (response: Response) => {
+    // Convert response to a Blob
+
+    const blob = await response.blob();
+
+    const parsedOptions = JSON.parse(options);
+
+    // Create a temporary URL for the blob
+    const url = window.URL.createObjectURL(blob);
+
+    // Create a link element and trigger a download
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', `blocks-${parsedOptions?.date}.csv`);
+    document.body.appendChild(link);
+    link.click(); // Trigger the download
+    document.body.removeChild(link); // Clean up
+
+    // Revoke the object URL to free up memory
+    window.URL.revokeObjectURL(url);
+  };
+
   const onDrop = useCallback(
     async (acceptedFiles: FileWithPath[], rejectedFiles: FileRejection[]) => {
       if (rejectedFiles.length > 0) {
@@ -98,8 +120,9 @@ const UploadForm = () => {
         setLoading(false);
       }
     },
-    [options],
+    [options, downloadResponse],
   );
+
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: {
@@ -108,28 +131,6 @@ const UploadForm = () => {
     maxSize: 4 * 1024 * 1024,
     maxFiles: 1,
   });
-
-  const downloadResponse = async (response: Response) => {
-    // Convert response to a Blob
-
-    const blob = await response.blob();
-
-    const parsedOptions = JSON.parse(options);
-
-    // Create a temporary URL for the blob
-    const url = window.URL.createObjectURL(blob);
-
-    // Create a link element and trigger a download
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('download', `blocks-${parsedOptions?.date}.csv`);
-    document.body.appendChild(link);
-    link.click(); // Trigger the download
-    document.body.removeChild(link); // Clean up
-
-    // Revoke the object URL to free up memory
-    window.URL.revokeObjectURL(url);
-  };
 
   const csvGenerationSuccess = () => {
     setSuccess(true);

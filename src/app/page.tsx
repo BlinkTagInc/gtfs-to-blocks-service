@@ -43,9 +43,10 @@ export default function Home() {
           <div className="flex flex-row gap-6 mb-8">
             <div className="flex-shrink-0 text-8xl">☑️</div>
             <div>
-              If you want to audit all blocks, this tool will allow you to
-              ensure that no trips overlap for a specific block and find gaps in
-              blocks where additional trips could be added.
+              This tool is useful for auditing all blocks for a specific day. By
+              reviewing trips grouped by block in chronological order, you can
+              ensure that no trips overlap for a specific block and find gaps
+              where additional trips could be added.
             </div>
           </div>
 

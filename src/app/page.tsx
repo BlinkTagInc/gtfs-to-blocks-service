@@ -23,7 +23,7 @@ export default function Home() {
           <h2 className="text-xl font-bold">What is this tool?</h2>
 
           <div className="flex flex-row gap-6 mb-8">
-            <div className="flex-shrink-0 text-8xl">🚆</div>
+            <div className="shrink-0 text-8xl">🚆</div>
             <div>
               GTFS-to-blocks exports all trip segments sorted by block_id and
               their departure times from a GTFS file.
@@ -31,7 +31,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-row gap-6 mb-8">
-            <div className="flex-shrink-0 text-8xl">🕑</div>
+            <div className="shrink-0 text-8xl">🕑</div>
             <div>
               What is a block? A block is a group of trips that are part of the
               same transit service usually operated by a single vehicle. Two
@@ -41,7 +41,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-row gap-6 mb-8">
-            <div className="flex-shrink-0 text-8xl">☑️</div>
+            <div className="shrink-0 text-8xl">☑️</div>
             <div>
               This tool is useful for auditing all blocks for a specific day. By
               reviewing trips grouped by block in chronological order, you can
@@ -64,7 +64,7 @@ export default function Home() {
           <h2 className="text-xl font-bold">Questions, Feedback and Support</h2>
 
           <div className="flex flex-row gap-6 mb-8">
-            <div className="flex-shrink-0 text-8xl">✉️</div>
+            <div className="shrink-0 text-8xl">✉️</div>
             <div>
               Have questions or feedback about GTFS-to-blocks or need help
               integrating it into your agency&apos;s workflow? Email us at{' '}

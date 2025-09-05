@@ -11,6 +11,8 @@ import { OptionsEditor } from './OptionsEditor';
 
 const defaultOptions = {
   date: new Date().toISOString().split('T')[0].replace(/-/g, ''),
+  ignoreDuplicates: false,
+  ignoreErrors: false,
   includeDeadheads: true,
   timeFormat: 'HH:mm:ss',
 };

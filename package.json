@@ -11,7 +11,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.6.1",
+    "@vercel/analytics": "^2.0.1",
     "gtfs-to-blocks": "^0.3.8",
     "next": "^16.1.6",
     "react": "^19",
@@ -28,7 +28,7 @@
     "eslint": "^10",
     "eslint-config-next": "^16.1.6",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
+    "lint-staged": "^16.4.0",
     "postcss": "^8",
     "prettier": "^3.8.1",
     "tailwindcss": "^4.2.1",

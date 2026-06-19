@@ -3,3 +3,6 @@ allowBuilds:
   protobufjs: true
   sharp: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - gtfs-to-blocks@0.3.12
+  - gtfs@4.19.1

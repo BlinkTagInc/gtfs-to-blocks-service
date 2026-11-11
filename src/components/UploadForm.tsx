@@ -2,7 +2,8 @@
 
 import { useState, useCallback } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import { useDropzone, FileRejection, FileWithPath } from 'react-dropzone';
+import { useDropzone, FileRejection } from 'react-dropzone';
+import type { BlocksConfig } from 'gtfs-to-blocks';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { Loading } from './Loading';
@@ -12,10 +13,9 @@ import { OptionsEditor } from './OptionsEditor';
 const defaultOptions = {
   date: new Date().toISOString().split('T')[0].replace(/-/g, ''),
   ignoreDuplicates: false,
-  ignoreErrors: false,
   includeDeadheads: true,
   timeFormat: 'HH:mm:ss',
-};
+} satisfies BlocksConfig;
 
 const UploadForm = () => {
   const [url, setUrl] = useState('');
@@ -49,7 +49,7 @@ const UploadForm = () => {
   };
 
   const onDrop = useCallback(
-    async (acceptedFiles: FileWithPath[], rejectedFiles: FileRejection[]) => {
+    async (acceptedFiles: File[], rejectedFiles: FileRejection[]) => {
       if (rejectedFiles.length > 0) {
         toast(
           rejectedFiles

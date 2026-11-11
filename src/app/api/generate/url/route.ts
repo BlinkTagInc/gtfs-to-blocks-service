@@ -32,7 +32,7 @@ export const POST = async (request: Request) => {
       ...(options || {}),
       agencies: [
         {
-          agencyKey: buildId,
+          sourceId: buildId,
           url: gtfsUrl,
         },
       ],

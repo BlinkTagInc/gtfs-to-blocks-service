@@ -60,7 +60,7 @@ export const POST = async (request: Request) => {
       ...parsedOptions,
       agencies: [
         {
-          agencyKey: buildId,
+          sourceId: buildId,
           path: gtfsPath,
         },
       ],
